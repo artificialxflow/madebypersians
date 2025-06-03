@@ -1,75 +1,114 @@
-# Made by Persians – سایت صادراتی
+# Next.js Todo App with Bootstrap & Prisma
 
-این پروژه یک سایت شرکتی برای معرفی و بازاریابی تولیدکنندگان ایرانی به بازارهای جهانی است. پیاده‌سازی با Next.js (ساختار)، Bootstrap (استایل)، و HTML/CSS انجام شده و کاملاً ریسپانسیو و مدرن است.
+یک پروژه نمونه Todo List با Next.js، Bootstrap و Prisma + MySQL
 
-## تکنولوژی‌ها و ابزارها
-- Next.js (ساختار پروژه)
-- Bootstrap 5 (استایل و گرید)
-- SCSS (در صورت نیاز به سفارشی‌سازی)
-- HTML5 & CSS3
-- آیکون‌های FontAwesome
-- جاوااسکریپت برای اسکرول نرم و تعاملات
+## ویژگی‌ها
+- فرم افزودن و نمایش تودو
+- ذخیره‌سازی در دیتابیس MySQL با Prisma
+- استایل‌دهی مدرن با Bootstrap
+- API route برای مدیریت تودوها
 
-## ساختار پوشه‌ها
+## نصب و راه‌اندازی
+
+```bash
+npm install
 ```
-project/
+
+## اجرای پروژه در حالت توسعه
+```bash
+npm run dev
+```
+
+## ساخت نسخه production
+```bash
+npm run build
+npm run start
+```
+
+## خروجی استاتیک (Static Export)
+```bash
+npm run build
+npm run export
+```
+
+## تنظیمات دیتابیس
+در فایل `.env`:
+```
+DATABASE_URL="mysql://root:پسورد@localhost:3307/firstdb"
+```
+
+## دستورات Prisma
+```bash
+npx prisma generate
+npx prisma migrate dev --name init
+npx prisma db pull
+```
+
+## ساختار پروژه
+```
 ├── app/
-├── components/
+│   ├── api/todo/route.ts   # API تودو
+│   ├── page.tsx            # صفحه اصلی
+│   ├── layout.tsx          # لایه اصلی و ایمپورت بوتسترپ
+│   └── ...
+├── prisma/
+│   └── schema.prisma       # مدل دیتابیس
 ├── public/
-│   └── assets/
-│       └── logo.png
-├── styles/
-│   ├── custom.scss
-│   └── variables.scss
-├── tests/
-├── docs/
-│   └── website-structure.md
-├── Rules.md
-├── tasks.md
-├── README.md
-└── npm-lock.yaml
+├── .env
+├── package.json
+└── README.md
 ```
 
-## قوانین و نکات مهم پروژه
-- استفاده پیش‌فرض از Bootstrap برای استایل‌دهی
-- استفاده از محیط‌های `.env` طبق استاندارد پروژه
-- رعایت امنیت، مدیریت خطا و به‌روزرسانی مستندات
-- هر بخش اصلی سایت باید id یکتا داشته باشد (برای اسکرول نرم)
-- مسیر لوگو و تصاویر باید صحیح و در پوشه public/assets باشد
-- اسکرول نرم برای منوها و لوگو فعال است
-- ساختار و نام‌گذاری فایل‌ها و پوشه‌ها مطابق راهنمای پروژه
+## چک‌لیست مراحل پروژه
+- [x] راه‌اندازی Next.js
+- [x] نصب و ایمپورت Bootstrap
+- [x] ساخت مدل Prisma و اتصال به MySQL
+- [x] ساخت API route برای تودو
+- [x] ساخت فرم و لیست تودو
+- [x] استایل‌دهی با Bootstrap
+- [x] تست و رفع خطاها
+- [x] بروزرسانی مستندات و README
 
 ---
 
-## چک‌لیست مراحل انجام‌شده تا اینجا
+### برای build گرفتن:
+- `npm run build` (ساخت نسخه production)
+- `npm run export` (خروجی استاتیک)
+- `npm run start` (اجرای نسخه production)
 
-- [x] تحلیل کامل طرح نمونه و تقسیم‌بندی بخش‌های سایت (header, hero, آمار، خدمات، روند کار، نمونه کارها، تعرفه، نظرات، فرم تماس، فوتر)
-- [x] ایجاد فایل راهنمای ساختار سایت در `docs/website-structure.md`
-- [x] پیاده‌سازی هدر (navbar) با لوگو، منو، زبان و دکمه مشاوره رایگان (Bootstrap)
-- [x] پیاده‌سازی بخش قهرمان (Hero) با تصویر شاخص، تیتر، دکمه‌ها، باکس آماری و موج پایین
-- [x] ریسپانسیو کردن کامل hero و هدر
-- [x] پیاده‌سازی بخش آمار و افتخارات با چهار کارت و آیکون
-- [x] پیاده‌سازی بخش خدمات ما با پنج کارت سرویس و دکمه روند کار
-- [x] پیاده‌سازی بخش روند کار ما با پنج مرحله و آیکون دایره‌ای
-- [x] پیاده‌سازی بخش نمونه کارها با چهار کارت و تصاویر مرتبط
-- [x] پیاده‌سازی بخش تعرفه خدمات با دو پلن و امکانات هر پلن
-- [x] پیاده‌سازی بخش نظرات مشتریان با کارت و اسلایدر ساده
-- [x] پیاده‌سازی فرم تماس و مشاوره رایگان با دو ستون و باکس راه‌های ارتباطی
-- [x] پیاده‌سازی فوتر با چهار ستون (معرفی، لینک سریع، خدمات، تماس) و شبکه‌های اجتماعی
-- [x] بهبود فاصله‌ها و خوانایی در موبایل و دسکتاپ (navbar، hero، فرم تماس و ...)
-- [x] فعال‌سازی اسکرول نرم برای منوها و لوگو (کلیک روی هر منو/لوگو اسکرول نرم به بخش مربوطه)
-- [x] افزودن id یکتا به تمام بخش‌های اصلی سایت برای اسکرول صحیح
-- [x] انتقال لوگو به پوشه assets و اصلاح مسیرها
-- [x] تست و رفع ایرادات ریسپانسیو و اسکرول
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
----
+## Getting Started
 
-### ادامه مسیر
-- [ ] پیاده‌سازی بخش وبلاگ (در صورت نیاز)
-- [ ] اتصال به بک‌اند یا فرم واقعی (در صورت نیاز)
-- [ ] تست نهایی و بهینه‌سازی
-- [ ] مستندسازی نهایی و آماده‌سازی برای انتشار
+First, run the development server:
 
----
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-> هر مرحله جدید یا تغییر مهم، باید در این README و فایل‌های مستندات ثبت شود. 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
