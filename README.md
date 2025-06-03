@@ -26,10 +26,20 @@ npm run start
 ```
 
 ## خروجی استاتیک (Static Export)
+
+در نسخه‌های جدید Next.js، برای خروجی استاتیک کافیست در فایل `next.config.ts` گزینه زیر را اضافه کنید:
+
+```js
+output: 'export',
+```
+
+سپس فقط کافیست دستور زیر را اجرا کنید:
+
 ```bash
 npm run build
-npm run export
 ```
+
+پروژه به صورت استاتیک در پوشه `out/` خروجی می‌گیرد.
 
 ## تنظیمات دیتابیس
 در فایل `.env`:
@@ -72,9 +82,7 @@ npx prisma db pull
 ---
 
 ### برای build گرفتن:
-- `npm run build` (ساخت نسخه production)
-- `npm run export` (خروجی استاتیک)
-- `npm run start` (اجرای نسخه production)
+- `npm run build` (ساخت نسخه production و خروجی استاتیک)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
